@@ -146,7 +146,7 @@ fi
 
 #
 # uncomment following line if you want to use an SPN login
-../../setup-env.sh
+sudo ../../setup-env.sh
 
 
 echo "terraform init"
