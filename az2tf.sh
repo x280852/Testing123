@@ -100,6 +100,7 @@ if [ "$f" = "no" ]; then
     rm -f import.log *.txt
     rm -f terraform* *.tf *.sh
 else
+    echo "jumpin"
     #rm -f *$r*state*.sh import.log
 fi
 
