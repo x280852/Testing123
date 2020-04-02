@@ -70,9 +70,6 @@ fi
 
 myrg=$g
 export ARM_SUBSCRIPTION_ID="$mysub"
-export ARM_CLIENT_ID=$servicePrincipalId
-export ARM_CLIENT_SECRET=$servicePrincipalKey
-export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
 az cloud set -n $mycld
 az account set -s $mysub
 if [ $? -eq 1 ]; then exit; fi
@@ -149,10 +146,7 @@ fi
 
 #
 # uncomment following line if you want to use an SPN login
-export ARM_SUBSCRIPTION_ID="$mysub"
-export ARM_CLIENT_ID=$servicePrincipalId
-export ARM_CLIENT_SECRET=$servicePrincipalKey
-export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
+../../setup-env.sh
 
 
 echo "terraform init"
@@ -177,11 +171,6 @@ if [ "$v" = "yes" ]; then
     exit 
 fi
 
-export ARM_SUBSCRIPTION_ID="$mysub"
-export ARM_CLIENT_ID=$servicePrincipalId
-export ARM_CLIENT_SECRET=$servicePrincipalKey
-export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
-
 chmod 755 *state*.sh
 terraform --version
 if [ "$f" = "yes" ]; then
@@ -190,12 +179,6 @@ for com in `ls *$r*staterm.sh | sort -g`; do
     echo $comm
     eval $comm
 done
-
-export ARM_SUBSCRIPTION_ID="$mysub"
-export ARM_CLIENT_ID=$servicePrincipalId
-export ARM_CLIENT_SECRET=$servicePrincipalKey
-export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
-
 fi
 
 echo "state cleaned"
