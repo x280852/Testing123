@@ -69,7 +69,12 @@ else
 fi
 
 myrg=$g
-export ARM_SUBSCRIPTION_ID="$mysub"
+echo "Setting environment variables for Terraform"
+export ARM_SUBSCRIPTION_ID="9f9751de-7b7f-4525-8c58-85568cf2c1c5"
+export ARM_CLIENT_ID=$servicePrincipalId
+export ARM_CLIENT_SECRET=$servicePrincipalKey
+export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
+
 az cloud set -n $mycld
 az account set -s $mysub
 if [ $? -eq 1 ]; then exit; fi
@@ -95,7 +100,7 @@ if [ "$f" = "no" ]; then
     rm -f import.log *.txt
     rm -f terraform* *.tf *.sh
 else
-    rm -f *$r*state*.sh import.log
+    #rm -f *$r*state*.sh import.log
 fi
 
 # cleanup from any previous runs
@@ -146,11 +151,7 @@ fi
 
 #
 # uncomment following line if you want to use an SPN login
-echo "Setting environment variables for Terraform"
-export ARM_SUBSCRIPTION_ID="9f9751de-7b7f-4525-8c58-85568cf2c1c5"
-export ARM_CLIENT_ID=$servicePrincipalId
-export ARM_CLIENT_SECRET=$servicePrincipalKey
-export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
+
 
 
 echo "terraform init"
