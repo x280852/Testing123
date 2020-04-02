@@ -147,6 +147,7 @@ fi
 #
 # uncomment following line if you want to use an SPN login
 echo "Setting environment variables for Terraform"
+export ARM_SUBSCRIPTION_ID=$(az account show --query id | xargs)
 export ARM_CLIENT_ID=$servicePrincipalId
 export ARM_CLIENT_SECRET=$servicePrincipalKey
 export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
