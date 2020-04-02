@@ -176,6 +176,7 @@ if [ "$v" = "yes" ]; then
 fi
 
 chmod 755 *state*.sh
+cat *state*.sh
 terraform --version
 if [ "$f" = "yes" ]; then
 for com in `ls *$r*staterm.sh | sort -g`; do
