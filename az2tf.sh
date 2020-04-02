@@ -69,12 +69,10 @@ else
 fi
 
 myrg=$g
-echo "Setting environment variables for Terraform"
-export ARM_SUBSCRIPTION_ID="9f9751de-7b7f-4525-8c58-85568cf2c1c5"
+export ARM_SUBSCRIPTION_ID="$mysub"
 export ARM_CLIENT_ID=$servicePrincipalId
 export ARM_CLIENT_SECRET=$servicePrincipalKey
 export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
-
 az cloud set -n $mycld
 az account set -s $mysub
 if [ $? -eq 1 ]; then exit; fi
@@ -100,8 +98,7 @@ if [ "$f" = "no" ]; then
     rm -f import.log *.txt
     rm -f terraform* *.tf *.sh
 else
-    echo "jumpin"
-    #rm -f *$r*state*.sh import.log
+    rm -f *$r*state*.sh import.log
 fi
 
 # cleanup from any previous runs
@@ -152,7 +149,10 @@ fi
 
 #
 # uncomment following line if you want to use an SPN login
-
+export ARM_SUBSCRIPTION_ID="$mysub"
+export ARM_CLIENT_ID=$servicePrincipalId
+export ARM_CLIENT_SECRET=$servicePrincipalKey
+export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
 
 
 echo "terraform init"
@@ -177,8 +177,12 @@ if [ "$v" = "yes" ]; then
     exit 
 fi
 
+export ARM_SUBSCRIPTION_ID="$mysub"
+export ARM_CLIENT_ID=$servicePrincipalId
+export ARM_CLIENT_SECRET=$servicePrincipalKey
+export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
+
 chmod 755 *state*.sh
-cat *state*.sh
 terraform --version
 if [ "$f" = "yes" ]; then
 for com in `ls *$r*staterm.sh | sort -g`; do
@@ -186,6 +190,12 @@ for com in `ls *$r*staterm.sh | sort -g`; do
     echo $comm
     eval $comm
 done
+
+export ARM_SUBSCRIPTION_ID="$mysub"
+export ARM_CLIENT_ID=$servicePrincipalId
+export ARM_CLIENT_SECRET=$servicePrincipalKey
+export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
+
 fi
 
 echo "state cleaned"
