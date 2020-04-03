@@ -185,6 +185,7 @@ fi
 echo "state cleaned"
 
 for com in `ls *$r*stateimp.sh | sort -g`; do
+    cat ./001-azurerm_resource_group-stateimp.sh
     comm=`printf "./%s" $com`
     echo $comm
     eval $comm
