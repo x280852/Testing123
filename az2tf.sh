@@ -1,3 +1,11 @@
+export ARM_CLIENT_ID=$servicePrincipalId
+export ARM_CLIENT_SECRET=$servicePrincipalKey
+export ARM_SUBSCRIPTION_ID="9f9751de-7b7f-4525-8c58-85568cf2c1c5"
+export ARM_TENANT_ID="35595a02-4d6d-44ac-99e1-f9ab4cd872db"
+
+env | grep ARM
+
+
 usage()
 { echo "Usage: $0 [-c <Cloud>] -s <Subscription ID> [-g <Resource Group>] [-r azurerm_<resource_type>] [-x <yes|no(default)>] [-p <yes|no(default)>] [-f <yes|no(default)>] [-v <yes|no(default)>] [-d <yes|no(default)>]" 1>&2; exit 1;
 }
@@ -146,10 +154,6 @@ fi
 
 #
 # uncomment following line if you want to use an SPN login
-chmod +x ../../setup-env.sh
-../../setup-env.sh
-echo "kk"
-env | grep ARM
 
 echo "terraform init"
 terraform init 2>&1 | tee -a import.log
