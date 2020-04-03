@@ -191,7 +191,6 @@ echo "state cleaned"
 
 for com in `ls *$r*stateimp.sh | sort -g`; do
    env | grep ARM
-    terraform import azurerm_resource_group.f5HAx280852 /subscriptions/9f9751de-7b7f-4525-8c58-85568cf2c1c5/resourceGroups/f5HAx280852
     cat ./001-azurerm_resource_group-stateimp.sh
     comm=`printf "./%s" $com`
     echo $comm
