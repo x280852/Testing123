@@ -149,6 +149,7 @@ fi
 chmod +x ../../setup-env.sh
 ../../setup-env.sh
 
+env | ARM
 
 echo "terraform init"
 terraform init 2>&1 | tee -a import.log
