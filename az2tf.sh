@@ -148,7 +148,7 @@ fi
 # uncomment following line if you want to use an SPN login
 chmod +x ../../setup-env.sh
 ../../setup-env.sh
-
+echo "kk"
 env | ARM
 
 echo "terraform init"
