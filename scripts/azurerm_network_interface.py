@@ -21,7 +21,7 @@ def azurerm_network_interface(crf,cde,crg,headers,requests,sub,json,az2tfmess,cl
         for i in range(0, count):
 
             name=azr[i]["name"]
-            loc=azr[i]["location"]
+            loc="westeurope"
             id=azr[i]["id"]
             rgs=id.split("/")[4]
             rg=id.split("/")[4].replace(".","-").lower()
