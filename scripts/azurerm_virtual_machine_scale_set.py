@@ -137,7 +137,8 @@ def azurerm_virtual_machine_scale_set(crf,cde,crg,headers,requests,sub,json,az2t
                     try:
                         #vmsshpath = azr[i]["properties"]["virtualMachineProfile"]["osProfile"]["linuxConfiguration"]["ssh"]["publicKeys"][0]["path"]
                         vmsshpath = "a"
-                        vmsshkey = azr[i]["properties"]["virtualMachineProfile"]["osProfile"]["linuxConfiguration"]["ssh"]["publicKeys"][0]["keyData"]
+                        #vmsshkey = azr[i]["properties"]["virtualMachineProfile"]["osProfile"]["linuxConfiguration"]["ssh"]["publicKeys"][0]["keyData"]
+                        vmsshkey = "*"
                         fr.write('\tssh_keys { \n')
                         fr.write('\t\tpath = "' + vmsshpath + '"\n')
                         fr.write('\t\tkey_data = "' +   vmsshkey.rstrip() + '"\n') 
