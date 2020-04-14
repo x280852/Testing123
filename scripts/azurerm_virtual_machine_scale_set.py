@@ -135,7 +135,8 @@ def azurerm_virtual_machine_scale_set(crf,cde,crg,headers,requests,sub,json,az2t
                 fr.write('\tdisable_password_authentication = ' + str(vmdispw).lower() + '\n')
                 if vmdispw != "false":
                     try:
-                        vmsshpath = azr[i]["properties"]["virtualMachineProfile"]["osProfile"]["linuxConfiguration"]["ssh"]["publicKeys"][0]["path"]
+                        #vmsshpath = azr[i]["properties"]["virtualMachineProfile"]["osProfile"]["linuxConfiguration"]["ssh"]["publicKeys"][0]["path"]
+                        #vmsshpath = "a"
                         vmsshkey = azr[i]["properties"]["virtualMachineProfile"]["osProfile"]["linuxConfiguration"]["ssh"]["publicKeys"][0]["keyData"]
                         fr.write('\tssh_keys { \n')
                         fr.write('\t\tpath = "' + vmsshpath + '"\n')
