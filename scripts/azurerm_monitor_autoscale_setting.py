@@ -71,8 +71,8 @@ def azurerm_monitor_autoscale_setting(crf,cde,crg,headers,requests,sub,json,az2t
                 if trty == "Microsoft-Web":
                     tftyp = "azurerm_app_service_plan"
                 # case sensitite so use actual ID
-                fr.write('target_resource_id = "' + triid + '"\n')
-                #fr.write('target_resource_id = "${'+ tftyp + '.' + trrg + '__' + trid+'.id}"\n')
+                #fr.write('target_resource_id = "' + triid + '"\n')
+                fr.write('target_resource_id = "${'+ tftyp + '.' + trrg + '__' + trid+'.id}"\n')
             except KeyError:
                 pass
 
