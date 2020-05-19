@@ -177,7 +177,7 @@ def azurerm_monitor_autoscale_setting(crf,cde,crg,headers,requests,sub,json,az2t
                                 fr.write('\t\t\tmetric_name = "' + mtn + '"\n')
                                 fr.write(
                                     #'\t\t\tmetric_resource_id = '+tftyp + '.' + mtrrg + '__' + mtrid + '.id\n')
-                                    '\t\t\tmetric_resource_id = "01234567890" + '\n')
+                                    '\t\t\tmetric_resource_id = "01234567890"\n')
                                 fr.write('\t\t\toperator = "' + mtop + '"\n')
                                 fr.write('\t\t\tstatistic= "' + mtstat + '"\n')
                                 fr.write('\t\t\tthreshold = "' +
