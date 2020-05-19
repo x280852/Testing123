@@ -73,6 +73,7 @@ def azurerm_monitor_autoscale_setting(crf,cde,crg,headers,requests,sub,json,az2t
                 # case sensitite so use actual ID
                 #fr.write('target_resource_id = "' + triid + '"\n')
                 #fr.write('target_resource_id = "${'+ tftyp + '.' + trrg + '__' + trid+'.id}"\n')
+                fr.write('target_resource_id = "${'+ tftyp + '.' + trrg + '__' + trid+'}"\n')
             except KeyError:
                 pass
 
@@ -174,8 +175,9 @@ def azurerm_monitor_autoscale_setting(crf,cde,crg,headers,requests,sub,json,az2t
                                 # metric trigger block
                                 fr.write('\t\tmetric_trigger {\n')
                                 fr.write('\t\t\tmetric_name = "' + mtn + '"\n')
-                                #fr.write(
-                                #    '\t\t\tmetric_resource_id = '+tftyp + '.' + mtrrg + '__' + mtrid + '.id\n')
+                                fr.write(
+                                    #'\t\t\tmetric_resource_id = '+tftyp + '.' + mtrrg + '__' + mtrid + '.id\n')
+                                    '\t\t\tmetric_resource_id = '+tftyp + '.' + mtrrg + '__' + mtrid + '\n')
                                 fr.write('\t\t\toperator = "' + mtop + '"\n')
                                 fr.write('\t\t\tstatistic= "' + mtstat + '"\n')
                                 fr.write('\t\t\tthreshold = "' +
