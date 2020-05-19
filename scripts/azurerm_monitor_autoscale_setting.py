@@ -73,7 +73,7 @@ def azurerm_monitor_autoscale_setting(crf,cde,crg,headers,requests,sub,json,az2t
                 # case sensitite so use actual ID
                 #fr.write('target_resource_id = "' + triid + '"\n')
                 #fr.write('target_resource_id = "${'+ tftyp + '.' + trrg + '__' + trid+'.id}"\n')
-                fr.write('target_resource_id = "01234567890"\n')
+                fr.write('target_resource_id = "/subscriptions/6f571a43-7fa9-4b9c-95ef-102150e9cd90/resourceGroups/chlp1weursgnicgenntfw001/providers/Microsoft.Compute/virtualMachineScaleSets/chlp1weunvanicgenntfw101"\n')
             except KeyError:
                 pass
 
@@ -177,7 +177,7 @@ def azurerm_monitor_autoscale_setting(crf,cde,crg,headers,requests,sub,json,az2t
                                 fr.write('\t\t\tmetric_name = "' + mtn + '"\n')
                                 fr.write(
                                     #'\t\t\tmetric_resource_id = '+tftyp + '.' + mtrrg + '__' + mtrid + '.id\n')
-                                    '\t\t\tmetric_resource_id = "01234567890"\n')
+                                    '\t\t\tmetric_resource_id = "/subscriptions/6f571a43-7fa9-4b9c-95ef-102150e9cd90/resourceGroups/chlp1weursgnicgenntfw001/providers/Microsoft.Compute/virtualMachineScaleSets/chlp1weunvanicgenntfw101"\n')
                                 fr.write('\t\t\toperator = "' + mtop + '"\n')
                                 fr.write('\t\t\tstatistic= "' + mtstat + '"\n')
                                 fr.write('\t\t\tthreshold = "' +
