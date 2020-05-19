@@ -227,7 +227,7 @@ def azurerm_virtual_machine_scale_set(crf,cde,crg,headers,requests,sub,json,az2t
 
                 try:
                     vmoswa = azr[i]["properties"]["virtualMachineProfile"]["storageProfile"]["osDisk"]["writeAcceleratorEnabled"]
-                    fr.write('\t write_accelerator_enabled = ' + str(vmoswa).lower() + '\n')
+                    #fr.write('\t write_accelerator_enabled = ' + str(vmoswa).lower() + '\n')
                 except KeyError:
                     pass
 
